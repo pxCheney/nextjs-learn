@@ -1,4 +1,6 @@
 // app/dashboard/page.js
+export const revalidate = 10;
+
 async function getData() {
   const res = await fetch("https://jsonplaceholder.typicode.com/todos");
   if (!res.ok) {
