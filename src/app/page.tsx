@@ -1,4 +1,4 @@
-// app/page.js
+// app/page.tsx
 export default async function Page() {
   return (
     <div className="note--empty-state">

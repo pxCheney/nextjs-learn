@@ -16,14 +16,14 @@ const allowedAttributes = Object.assign(
   },
 );
 
-export default async function NotePreview({ children }: { children: string }) {
-  const html = await marked(children || "");
+export default function NotePreview({ children }: { children: string }) {
+  const html = marked(children || "");
   return (
     <div className="note-preview">
       <div
         className="text-with-markdown"
         dangerouslySetInnerHTML={{
-          __html: sanitizeHtml(html, {
+          __html: sanitizeHtml(html as string, {
             allowedTags,
             allowedAttributes,
           }),

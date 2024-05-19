@@ -1,4 +1,4 @@
-// app/dashboard/page.js
+// app/dashboard/page.tsx
 export const revalidate = 10;
 
 async function getData() {

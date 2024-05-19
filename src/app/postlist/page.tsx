@@ -1,5 +1,5 @@
 "use client";
-// app/postList/page.js
+// app/postList/page.tsx
 import React, { useEffect, useState } from "react";
 
 export default function Blog() {
