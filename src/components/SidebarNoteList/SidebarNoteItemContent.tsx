@@ -65,7 +65,10 @@ export default function SidebarNoteContent({
           if (sidebarToggle) {
             sidebarToggle.checked = true;
           }
-          router.push(`/note/${id}`);
+
+          const params = new URLSearchParams(window.location.search);
+          const qs = params.toString();
+          router.push(`/note/${id}${qs ? `?${qs}` : ""}`);
         }}
       >
         Open note for preview

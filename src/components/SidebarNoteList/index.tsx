@@ -13,7 +13,7 @@ function SidebarNoteItemHeader({ title, updateTime }) {
 }
 
 export default async function NoteList() {
-  await sleep(2000);
+  // await sleep(2000);
 
   const notes = await getAllNotes();
   const arr = Object.entries(notes);

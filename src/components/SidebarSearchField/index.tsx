@@ -26,6 +26,7 @@ export default function SidebarSearchField() {
       params.delete("q");
     }
 
+    // isPending 时间花在了哪里？
     startTransition(() => {
       replace(`${pathname}?${params.toString()}`);
     });
