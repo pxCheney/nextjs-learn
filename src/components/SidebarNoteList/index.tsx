@@ -1,8 +1,18 @@
+import dayjs from "dayjs";
 import { getAllNotes, IData } from "@/lib/redis";
-import SidebarNoteItem from "@/components/SidebarNoteList/SiderbarNoteItem";
+import { sleep } from "@/lib/utils";
+import SidebarNoteListFilter from "@/components/SidebarNoteListFilter";
+
+function SidebarNoteItemHeader({ title, updateTime }) {
+  return (
+    <header className="sidebar-note-header">
+      <strong>{title}</strong>
+      <small>{dayjs(updateTime).format("YYYY-MM-DD hh:mm:ss")}</small>
+    </header>
+  );
+}
 
 export default async function NoteList() {
-  const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
   await sleep(2000);
 
   const notes = await getAllNotes();
@@ -13,14 +23,20 @@ export default async function NoteList() {
   }
 
   return (
-    <ul className="notes-list">
-      {arr.map(([noteId, note]) => {
-        return (
-          <li key={noteId}>
-            <SidebarNoteItem noteId={noteId} note={JSON.parse(note)} />
-          </li>
-        );
+    <SidebarNoteListFilter
+      notes={Object.entries(notes).map(([noteId, note]) => {
+        const noteData = JSON.parse(note);
+        return {
+          noteId,
+          note: noteData,
+          header: (
+            <SidebarNoteItemHeader
+              title={noteData.title}
+              updateTime={noteData.updateTime}
+            />
+          ),
+        };
       })}
-    </ul>
+    />
   );
 }

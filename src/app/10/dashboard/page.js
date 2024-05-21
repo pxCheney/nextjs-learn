@@ -1,6 +1,5 @@
 import { Suspense } from "react";
-
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+import { sleep } from "@/lib/utils";
 
 async function PostFeed() {
   await sleep(2000);
