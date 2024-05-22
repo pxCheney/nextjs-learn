@@ -2,18 +2,22 @@ import React from "react";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import Sidebar from "@/components/Sidebar";
+import { Footer } from "@/components/Footer";
+import type { Locale } from "@/config";
 
 import "./style.css";
 
 export default async function RootLayout({
   children,
+  params: { locale },
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: Locale };
 }>) {
   const messages = await getMessages();
 
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages}>
           <div className="container">
@@ -21,6 +25,7 @@ export default async function RootLayout({
               <Sidebar />
               <section className="col note-viewer">{children}</section>
             </div>
+            <Footer lng={locale} />
           </div>
         </NextIntlClientProvider>
       </body>

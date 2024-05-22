@@ -4,5 +4,8 @@
     "initText": "Click a note on the left to view something! 🥺",
     "search": "search",
     "edit": "edit"
+  },
+  "Footer": {
+    "languageSwitcher": "Switch from {lng} to: "
   }
 }
