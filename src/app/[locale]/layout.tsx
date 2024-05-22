@@ -1,4 +1,6 @@
 import React from "react";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 import Sidebar from "@/components/Sidebar";
 
 import "./style.css";
@@ -8,15 +10,19 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const messages = await getMessages();
+
   return (
     <html lang="en">
       <body>
-        <div className="container">
-          <div className="main">
-            <Sidebar />
-            <section className="col note-viewer">{children}</section>
+        <NextIntlClientProvider messages={messages}>
+          <div className="container">
+            <div className="main">
+              <Sidebar />
+              <section className="col note-viewer">{children}</section>
+            </div>
           </div>
-        </div>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
