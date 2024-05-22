@@ -5,8 +5,11 @@ import SidebarNoteList from "@/components/SidebarNoteList";
 import NoteListSkeleton from "@/components/NoteListSkeleton";
 import EditButton from "@/components/EditButton";
 import SidebarSearchField from "@/components/SidebarSearchField";
+import type { Locale } from "@/config";
+import { useTranslation } from "@/i18n";
 
-export default async function Sidebar() {
+export default async function Sidebar({ lng }: { lng: Locale }) {
+  const { t } = await useTranslation(lng);
   return (
     <>
       <section className="col sidebar">
@@ -27,8 +30,8 @@ export default async function Sidebar() {
           </section>
         </Link>
         <section className="sidebar-menu" role="menubar">
-          <SidebarSearchField />
-          <EditButton noteId={null}>New</EditButton>
+          <SidebarSearchField lng={lng} />
+          <EditButton noteId="">{t("new")}</EditButton>
         </section>
         <nav>
           <Suspense fallback={<NoteListSkeleton />}>
@@ -40,3 +43,12 @@ export default async function Sidebar() {
     </>
   );
 }
+export const getServerSideProps = async (context) => {
+  console.log("PX-params", context.params);
+
+  // 你可以在此处添加其他数据获取逻辑，比如从数据库或其他API获取数据
+
+  return {
+    props: {},
+  };
+};

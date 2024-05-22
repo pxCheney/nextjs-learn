@@ -39,7 +39,6 @@ export async function saveNote(prevState, formData: FormData) {
     await addNote(JSON.stringify(data));
     revalidatePath("/", "layout");
   }
-
   return { message: `Add Success!` };
 }
 

@@ -1,21 +1,33 @@
 import React from "react";
 import Sidebar from "@/components/Sidebar";
+import { i18n, Locale } from "@/config";
+import { Footer } from "@/components/Footer";
 
 import "./style.css";
 
+// generateStaticParams 和动态路由一起使用，用于在构建时静态生成路由：在 next build 时会展现
+export async function generateStaticParams() {
+  return i18n.locales.map((lng) => ({ lng }));
+}
+
 export default async function RootLayout({
   children,
+  params: { lng },
 }: Readonly<{
   children: React.ReactNode;
+  params: {
+    lng: Locale;
+  };
 }>) {
   return (
-    <html lang="en">
+    <html lang={lng}>
       <body>
         <div className="container">
           <div className="main">
-            <Sidebar />
+            <Sidebar lng={lng} />
             <section className="col note-viewer">{children}</section>
           </div>
+          <Footer lng={lng} />
         </div>
       </body>
     </html>
