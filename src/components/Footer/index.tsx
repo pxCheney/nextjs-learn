@@ -13,9 +13,11 @@ export const Footer = async ({ lng }: { lng: Locale }) => {
         position: "fixed",
         right: 30,
         top: 30,
-        background: "lime",
-        padding: 10,
-        borderRadius: 8,
+        // background: "#037dba",
+        border: "1px solid #037dba",
+        color: "#037dba",
+        padding: 8,
+        borderRadius: 12,
         opacity: 0.8,
       }}
     >
@@ -26,7 +28,12 @@ export const Footer = async ({ lng }: { lng: Locale }) => {
           return (
             <span key={l}>
               {index > 0 && " | "}
-              <Link href={`/${l}`}>{l}</Link>
+              <Link
+                style={{ paddingLeft: 4, color: "orange", fontWeight: 600 }}
+                href={`/${l}`}
+              >
+                {l}
+              </Link>
             </span>
           );
         })}
