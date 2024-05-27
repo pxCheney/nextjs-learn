@@ -4,7 +4,9 @@ import { getMessages } from "next-intl/server";
 import Sidebar from "@/components/Sidebar";
 import { Footer } from "@/components/Footer";
 import type { Locale } from "@/config";
+import Header from "@/components/Header";
 
+import "./globals.css";
 import "./style.css";
 
 export default async function RootLayout({
@@ -20,12 +22,14 @@ export default async function RootLayout({
     <html lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages}>
-          <div className="container">
+          <div className="nextjs-container">
+            <Header>
+              <Footer lng={locale} />
+            </Header>
             <div className="main">
               <Sidebar />
-              <section className="col note-viewer">{children}</section>
+              <section className="col note-viewer relative">{children}</section>
             </div>
-            <Footer lng={locale} />
           </div>
         </NextIntlClientProvider>
       </body>

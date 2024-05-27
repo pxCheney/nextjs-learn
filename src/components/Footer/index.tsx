@@ -10,13 +10,10 @@ export const Footer = async ({ lng }: { lng: Locale }) => {
     <footer
       style={{
         margin: 20,
-        position: "fixed",
-        right: 30,
-        top: 30,
         // background: "#037dba",
         border: "1px solid #037dba",
         color: "#037dba",
-        padding: 8,
+        padding: 4,
         borderRadius: 12,
         opacity: 0.8,
       }}
