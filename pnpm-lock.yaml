@@ -17,6 +17,12 @@ importers:
       dayjs:
         specifier: ^1.11.11
         version: 1.11.11
+      eslint:
+        specifier: ^8
+        version: 8.57.0
+      eslint-config-next:
+        specifier: 14.2.3
+        version: 14.2.3(eslint@8.57.0)(typescript@5.4.5)
       i18next:
         specifier: ^23.11.5
         version: 23.11.5
@@ -38,6 +44,12 @@ importers:
       next:
         specifier: 14.2.3
         version: 14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      postcss:
+        specifier: ^8
+        version: 8.4.38
+      prettier:
+        specifier: ^3.2.5
+        version: 3.2.5
       react:
         specifier: ^18
         version: 18.3.1
@@ -53,6 +65,12 @@ importers:
       sanitize-html:
         specifier: ^2.13.0
         version: 2.13.0
+      tailwindcss:
+        specifier: ^3.4.1
+        version: 3.4.3
+      typescript:
+        specifier: ^5
+        version: 5.4.5
       zod:
         specifier: ^3.23.8
         version: 3.23.8
@@ -61,10 +79,10 @@ importers:
         specifier: ^0.6.3
         version: 0.6.3
       '@types/node':
-        specifier: ^20
+        specifier: ^20.12.12
         version: 20.12.12
       '@types/react':
-        specifier: ^18
+        specifier: ^18.3.2
         version: 18.3.2
       '@types/react-dom':
         specifier: ^18
@@ -72,24 +90,6 @@ importers:
       '@types/sanitize-html':
         specifier: ^2.11.0
         version: 2.11.0
-      eslint:
-        specifier: ^8
-        version: 8.57.0
-      eslint-config-next:
-        specifier: 14.2.3
-        version: 14.2.3(eslint@8.57.0)(typescript@5.4.5)
-      postcss:
-        specifier: ^8
-        version: 8.4.38
-      prettier:
-        specifier: ^3.2.5
-        version: 3.2.5
-      tailwindcss:
-        specifier: ^3.4.1
-        version: 3.4.3
-      typescript:
-        specifier: ^5
-        version: 5.4.5
 
 packages:
 

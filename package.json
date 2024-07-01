@@ -12,6 +12,8 @@
     "@formatjs/intl-localematcher": "^0.5.4",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.11",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
     "i18next": "^23.11.5",
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-resources-to-backend": "^1.2.1",
@@ -19,24 +21,22 @@
     "marked": "^12.0.2",
     "negotiator": "^0.6.3",
     "next": "14.2.3",
+    "postcss": "^8",
+    "prettier": "^3.2.5",
     "react": "^18",
     "react-cookie": "^7.1.4",
     "react-dom": "^18",
     "react-i18next": "^14.1.1",
     "sanitize-html": "^2.13.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5",
     "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/negotiator": "^0.6.3",
-    "@types/node": "^20",
-    "@types/react": "^18",
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.3.2",
     "@types/react-dom": "^18",
-    "@types/sanitize-html": "^2.11.0",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.3",
-    "postcss": "^8",
-    "prettier": "^3.2.5",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "@types/sanitize-html": "^2.11.0"
   }
 }

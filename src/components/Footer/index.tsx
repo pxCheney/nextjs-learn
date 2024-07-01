@@ -6,7 +6,6 @@ import { useTranslation } from "@/i18n";
 
 export const Footer = async ({ lng }: { lng: Locale }) => {
   const { t } = await useTranslation(lng, "footer");
-  console.log("PX", t("lng"));
   return (
     <footer
       style={{
