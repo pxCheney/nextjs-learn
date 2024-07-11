@@ -1,6 +1,10 @@
 import Redis from "ioredis";
 
-const redis = new Redis();
+const redisHost = process.env.REDIS_HOST || "localhost";
+const redis = new Redis({
+  host: redisHost,
+  port: 6379, // 默认端口
+});
 
 export interface IData {
   title: string;
